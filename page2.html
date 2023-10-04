@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management</title>
+    <style>
+        body {
+            background-image:url('https://media.istockphoto.com/id/1335422806/vector/dark-blue-dynamic-gradient-lines-abstract-background-technology-design.jpg?s=612x612&w=0&k=20&c=dEEQOWFw5YAt2L8GUIVdVlPRqsBV2UZZ3LE8gAOb_iM=');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .dashboard {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Leave Management</h2>
+        <div class="button-container">
+            <a href="pp.html" class="button" id="casualLeaveButton">Casual Leave </a>
+            <a href="ml.html" class="button" id="medicalLeaveButton">Medical Leave </a>
+        </div>
+    </div>
+
+    <div class="dashboard" id="casualLeaveDashboard">
+        <h3>Casual Leave </h3>
+        <p id="casualLeaveDays">20 days</p>
+    </div>
+
+    <div class="dashboard" id="medicalLeaveDashboard">
+        <h3>Medical Leave </h3>
+        <p id="medicalLeaveDays">10 days</p>
+    </div>
+
+    <script>
+        // JavaScript code to decrease the leave days when the ss.html form is submitted
+        // You should implement the logic to update the leave days based on actual submissions.
+
+        const casualLeaveDaysElement = document.getElementById('casualLeaveDays');
+        const medicalLeaveDaysElement = document.getElementById('medicalLeaveDays');
+
+        // Function to update the leave days
+        function updateLeaveDays(casualDays, medicalDays) {
+            casualLeaveDaysElement.textContent = casualDays + ' days';
+            medicalLeaveDaysElement.textContent = medicalDays + ' days';
+        }
+
+        // Simulate a form submission in ss.html that decreases the leave days
+        // Example: Call this function when the form in ss.html is successfully submitted.
+        function simulateFormSubmission() {
+            // Decrease the leave days as needed
+            const currentCasualLeaveDays = 12; // Initial casual leave days
+            const currentMedicalLeaveDays = 15; // Initial medical leave days
+
+            // Update the leave days after submission (you can implement the actual logic here)
+            const updatedCasualLeaveDays = currentCasualLeaveDays - 1;
+            const updatedMedicalLeaveDays = currentMedicalLeaveDays - 1;
+
+            // Update the dashboard
+            updateLeaveDays(updatedCasualLeaveDays, updatedMedicalLeaveDays);
+        }
+
+        // Call the function to set the initial leave days on page load
+        updateLeaveDays(12, 15);
+    </script>
+</body>
+</html>

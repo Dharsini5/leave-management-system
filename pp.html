@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Casual Leave</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            margin: 20;
+            padding: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://sebackground.com/wp-content/uploads/2020/01/request_for_vacation_leave_email_templates.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; /* Prevent background from repeating */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Adding some transparency to the container background */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 50px;
+            width: 420px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        span {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Casual Leave</h1>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate">
+        <label for="purpose">Purpose:</label>
+        <input type="text" id="purpose">
+        <button onclick="calculateCasualLeave()">Calculate Casual Leave</button>
+        <p>Casual Leave : <span id="remainingCasualLeave">20</span></p>
+        <p>Total Leave Days: <span id="totalLeaveDays">0</span></p>
+        <button onclick="grantLeave()">Submit</button>
+    </div>
+
+    <script>
+        function calculateCasualLeave() {
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            const millisecondsInADay = 24 * 60 * 60 * 1000;
+
+            if (endDate < startDate) {
+                alert('End date must be after the start date.');
+                return;
+            }
+
+            const totalDays = Math.round((endDate - startDate) / millisecondsInADay) + 1;
+            const remainingCasualLeave = parseInt(document.getElementById('remainingCasualLeave').textContent);
+            const usedCasualLeave = totalDays;
+            const remainingCasualLeaveDays = remainingCasualLeave - usedCasualLeave;
+            document.getElementById('remainingCasualLeave').textContent = remainingCasualLeaveDays;
+            document.getElementById('totalLeaveDays').textContent = totalDays;
+        }
+
+        function grantLeave() {
+            const purpose = document.getElementById('purpose').value;
+            if (purpose.trim() === '') {
+                alert('Please provide a purpose for the leave.');
+                return;
+            }
+
+            // Perform any other necessary actions for granting leave here.
+            alert('Leave granted successfully. Purpose: ' + purpose);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Leave Request</title>
+    <style>
+         body {
+            background-image:url('https://sebackground.com/wp-content/uploads/2020/01/request_for_vacation_leave_email_templates.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .leave-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Leave Request</h2>
+        <form class="leave-form" action="#" method="post">
+            <div class="form-group">
+                <label for="employeeName">Employee Name:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+            </div>
+            <div class="form-group">
+                <label for="leaveStartDate">Leave Start Date:</label>
+                <input type="date" id="leaveStartDate" name="leaveStartDate" required>
+            </div>
+            <div class="form-group">
+                <label for="leaveEndDate">Leave End Date:</label>
+                <input type="date" id="leaveEndDate" name="leaveEndDate" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason for Leave:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+            <button type="submit" onclick="showAlert()">SUBMIT</button>
+            <script>
+                function showAlert() {
+                    alert("your leave granted successfully");
+                }
+            </script>
+        </form>
+    </div>
+</body>
+</html>
